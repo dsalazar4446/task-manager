@@ -1,0 +1,25 @@
+<section [ngClass]="{ 'jello-vertical': task.status === 'completed' }"
+ class="border rounded-2xl  border-gray-300 flex justify-between items-center gap-4 px-2 py-2">
+   <div class="flex gap-3 basis- items-center">
+        <p [style.color]="task.status | statusColor" class="break-all ">{{ task?.title | titlecase}} <p>
+   </div>
+
+   <div class="flex basis-auto"> 
+        <todo-chip
+            [variant]="task.status === 'completed' ? 'accent' : 'danger'"
+        
+        >
+            {{ task?.status | titlecase }}
+        </todo-chip>
+   </div>
+   <div class="flex basis-auto">
+        <todo-toggle
+            [checked]="task.status === 'completed'"
+            (checkedChange)="toggleStatus($event)"
+        ></todo-toggle>
+      
+   </div>
+    <div class="flex basis-auto" (click)="deleteTask()">
+        <img width="25" src="../../../assets/icons/TablerTrash.svg" alt="trash" >
+    </div>
+</section>

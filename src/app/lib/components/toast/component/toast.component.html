@@ -1,0 +1,8 @@
+<div 
+
+    *ngIf="isVisible"
+    [@toastAnimation]="state"
+    (@toastAnimation.done)="animationDone($event)"
+    class="toast">
+    <span>{{ message }}</span>
+</div>

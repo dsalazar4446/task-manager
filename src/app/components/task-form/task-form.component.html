@@ -1,0 +1,38 @@
+<form class="flex flex-col gap-4" [formGroup]="taskForm" (ngSubmit)="addTask()">
+    <div class="flex gap-4">
+        <input class="
+              appearance-none 
+              border 
+              rounded 
+              w-full py-2 px-3
+              text-gray-700 
+              leading-tight 
+              focus:outline-none 
+              focus:shadow-outline"
+            formControlName="title"
+            placeholder="Nueva tarea"
+           
+        />
+        <todo-button [disabled]="taskForm.invalid" type="submit">
+            Agregar
+        </todo-button>
+        
+
+    </div>
+
+    <div 
+        *ngIf="title?.hasError('required') && title?.touched" 
+        class="flex bg-red-300 rounded p-2">
+        <p class="text-red-900"> 
+            El <b>Titulo</b> es requerido
+        </p>
+    </div>
+
+    <div *ngIf="title?.hasError('minlength')" class="flex bg-red-300 rounded p-2">
+        <p class="text-red-900">
+            El <b>Titulo</b> debe tener al menos 6 caracteres
+        </p>
+    </div>
+    
+</form>
+

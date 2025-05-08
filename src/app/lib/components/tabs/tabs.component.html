@@ -1,0 +1,13 @@
+<div class="fixed bottom-0 left-0 w-full bg-white shadow-md z-50 md:hidden">
+    <div class="flex w-full border-t border-gray-300">
+        <button [routerLink]="[tab.route]" routerLinkActive="router-link-active"  *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)"
+            class="flex-1 px-4 py-3 text-center font-medium transition-colors duration-200" 
+            [ngClass]="{
+                'text-accent border-t-2 border-accent': tab.active,
+                'text-gray-600 hover:text-accent': !tab.active
+            }"
+      >
+            {{ tab.title | titlecase}}
+        </button>
+    </div>
+</div>

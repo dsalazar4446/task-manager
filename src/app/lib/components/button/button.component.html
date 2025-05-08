@@ -1,0 +1,14 @@
+<button 
+    [type]="type" 
+    [disabled]="disabled" 
+    [class]="classes" 
+    class="
+        px-2 py-1 min-w-20 
+        font-medium
+        rounded-2xl transition 
+        duration-200 text-lg
+        disabled:opacity-50
+        disabled:hover:bg-indigo-700
+    ">
+    <ng-content></ng-content>
+</button>

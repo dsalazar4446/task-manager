@@ -1,0 +1,17 @@
+<div class="modal-backdrop" *ngIf="isOpen"></div>
+<div [@modalAnimation]="isOpen" 
+    class="modal" *ngIf="isOpen">
+    <div class="modal-contenido flex flex-col gap-4">
+        <h2 class="text-4xl">{{ title }}</h2>
+        <p>{{ message }}</p>
+        <div class="flex gap-2 ">
+            <todo-button variant="primary" (click)="confirm()">
+                {{ buttonOk }}
+            </todo-button>
+            <todo-button variant="secondary" (click)="cerrarModal()">
+                Cerrar
+            </todo-button>           
+
+        </div>
+    </div>
+</div>

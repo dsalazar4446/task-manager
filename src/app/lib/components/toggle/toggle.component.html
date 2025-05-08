@@ -1,0 +1,9 @@
+
+<div (click)="toggle()"
+    class="relative w-12 h-6 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300"
+    [ngClass]="getBackgroundClass()">
+    <div class="bg-white w-4 h-4 rounded-full shadow-md transform duration-300" [ngClass]="{
+      'translate-x-6': checked,
+      'translate-x-0': !checked
+    }"></div>
+</div>

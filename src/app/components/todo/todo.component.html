@@ -1,0 +1,24 @@
+
+
+<todo-card class="w-xsm md:w-full  h-screen flex flex-col gap-4 items-center pt-20">
+  <todo-card-header>
+    <h2 class="text-2xl font-bold m-0">Lista de tareas</h2>
+    <div class="flex ">
+      <app-filters class="w-full" (filterActive)="getFilter($event)"></app-filters>
+    </div>  
+</todo-card-header>
+
+  <todo-card-body>
+    <todo-list>
+      <app-task *ngFor="let task of tasks; let i = index" [task]="task" (changeStatus)="toggleStatus($event)"
+        (delete)="deleteTask(i)"></app-task>
+      </todo-list>
+      
+  </todo-card-body>
+
+  <todo-card-footer>
+     <div class="flex justify-center w-full">
+       <todo-button (click)="saveToLocalStorage()" type="button">ok</todo-button>
+    </div>  
+  </todo-card-footer>
+</todo-card>

@@ -1,0 +1,16 @@
+<header 
+    [ngClass]="getVariantClasses()" 
+    class=" w-full flex items-center justify-between px-6 py-4 shadow fixed"
+>
+    <div class="flex items-center gap-4">
+        <ng-content select="[left]"></ng-content>
+    </div>
+
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ">
+        <ng-content select="[center]"></ng-content>
+    </div>
+
+    <div class="flex items-center gap-4 justify-end">
+        <ng-content select="[right]"></ng-content>
+    </div>
+</header>

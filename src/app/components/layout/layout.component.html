@@ -1,0 +1,33 @@
+<todo-header>
+    <div left class="pl-2">
+        <h1 class="text-2xl">Task Manager</h1>
+    </div>
+    <div center class="hidden sm:flex flex gap-4 w-full justify-start">
+        <div class="flex w-10">
+            <a [routerLink]="['/todo/task']" routerLinkActive="text-accent border-b-2 border-accent"  class="text-decoration none">Lista</a>
+
+        </div>
+        <div class="flex w-10">
+            <a  [routerLink]="['/todo/add']" routerLinkActive="'text-accent border-b-2 border-accent" class="text-decoration none">Nueva</a>
+        
+        </div>
+    </div>
+    <div right class="pr-2" class="flex gap-4">
+        <h3>Tema</h3>
+        <todo-toggle [checked]="true" (checkedChange)="changeToggle($event)"></todo-toggle>
+    </div>
+</todo-header>
+
+<todo-content>
+    <router-outlet></router-outlet>
+</todo-content>
+
+<todo-tabs>
+    <todo-tab route="/todo/task"  class="w-full" title="lista" >
+    </todo-tab>
+    <todo-tab route="/todo/add"  class="w-full" title="nueva">
+    </todo-tab>
+</todo-tabs>
+
+
+

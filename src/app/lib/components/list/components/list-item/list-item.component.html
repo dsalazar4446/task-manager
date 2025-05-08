@@ -1,0 +1,13 @@
+<li [ngClass]="[
+    clickable ? 'hover:bg-gray-100 hover:text-black cursor-pointer transition' : '',
+    selected ? 'ring-2 ring-offset-2 ' : '',
+    getVariantClasses()
+  ]" class="px-4 py-2 flex items-center gap-2 rounded-lg">
+    <!-- Ícono opcional -->
+    <ng-container *ngIf="icon">
+        <img [src]="icon" alt="ícono" class="w-5 h-5" />
+    </ng-container>
+
+    <!-- Contenido del ítem -->
+    <ng-content></ng-content>
+</li>
